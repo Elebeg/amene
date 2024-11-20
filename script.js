@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const animatedElements = document.querySelectorAll(".animated");
-    const serviceCards = document.querySelectorAll(".service-card");
+    const links = document.querySelectorAll('.smooth-scroll');
 
     const onScroll = () => {
         animatedElements.forEach((el) => {
@@ -39,4 +39,33 @@ document.addEventListener("DOMContentLoaded", () => {
         
         background.style.backgroundPosition = `center ${scrollPosition * 0.5}px`; 
     });
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = link.getAttribute('href').substring(1); 
+
+            const targetElement = document.getElementById(targetId);
+
+            window.scrollTo({
+                top: targetElement.offsetTop, 
+                behavior: 'smooth' 
+            });
+        });
+    });
+
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        const backgroundContainer = document.querySelector('.background-container');
+      
+        // Quando o usuário rola para baixo
+        if (window.scrollY > 0) {
+          navbar.classList.add('scrolled');  // Adiciona o fundo escuro à navbar
+          backgroundContainer.classList.add('visible');  // Torna o fundo visível
+        } else {
+          navbar.classList.remove('scrolled');  // Remove o fundo escuro da navbar
+          backgroundContainer.classList.remove('visible');  // Torna o fundo invisível
+        }
+      });      
 });
