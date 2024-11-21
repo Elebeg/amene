@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const animatedElements = document.querySelectorAll(".animated");
     const links = document.querySelectorAll('.smooth-scroll');
+    const readMoreLinks = document.querySelectorAll('.read-more');
+
+    let expandedCard = null; 
 
     const onScroll = () => {
         animatedElements.forEach((el) => {
@@ -67,4 +70,62 @@ document.addEventListener("DOMContentLoaded", () => {
           backgroundContainer.classList.remove('visible');  
         }
       });      
+
+      function toggleCardExpansion(serviceCard) {
+        const readMoreLink = serviceCard.querySelector('.read-more'); 
+
+        if (serviceCard.classList.contains('expanded')) {
+            serviceCard.classList.remove('expanded');
+            serviceCard.classList.add('collapsing');
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.style.opacity = '1'; 
+            });
+            serviceCard.querySelector('.more-text').style.display = 'none'; 
+            readMoreLink.textContent = 'Leia mais →'; 
+            expandedCard = null;
+
+            setTimeout(() => {
+              serviceCard.classList.remove('collapsing');
+          }, 800);
+          
+        } else {
+            if (expandedCard) {
+                expandedCard.classList.remove('expanded'); 
+                expandedCard.querySelector('.more-text').style.display = 'none'; 
+                expandedCard.style.opacity = '1'; 
+                expandedCard.querySelector('.read-more').textContent = 'Leia mais →';
+            }
+
+            serviceCard.classList.add('expanded');
+            document.querySelectorAll('.service-card').forEach(card => {
+                if (card !== serviceCard) {
+                    card.style.opacity = '0.3'; 
+                }
+            });
+            serviceCard.querySelector('.more-text').style.display = 'block'; 
+            readMoreLink.textContent = 'Leia menos ←';
+            expandedCard = serviceCard; 
+        }
+    }
+
+    readMoreLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); 
+
+            const serviceCard = this.closest('.service-card'); 
+            toggleCardExpansion(serviceCard); 
+        });
+    });
+
+    document.addEventListener('click', function (e) {
+        if (expandedCard && !expandedCard.contains(e.target) && !e.target.closest('.read-more')) {
+            toggleCardExpansion(expandedCard); 
+        }
+    });
+
+    readMoreLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.stopPropagation(); 
+        });
+    });
 });

@@ -37,9 +37,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; 
+  background-attachment: fixed;
   border-bottom-left-radius: 200px; 
   border-bottom-right-radius: 200px;
-  position: fixed;
+  position: absolute;
   overflow: hidden; 
   margin: 0 auto; 
   opacity: 0;
@@ -47,8 +48,8 @@ body {
   left: 0;        
   z-index: 0;     
   margin-bottom: 50px;
-  transition: background-position 0.2s ease-out;
   transition: opacity 1s ease-in-out;
+  transform-origin: center center;
 }
 
 .background-container.visible {
@@ -267,8 +268,8 @@ nav {
   position: absolute;
   width: 230px;
   padding: 20px;
-  background-color: #a0947f;
-  right: 100px;
+  background-color: #966c46;
+  right: 170px;
   top: 100px;
 }
 
@@ -280,7 +281,7 @@ nav {
   position: absolute;
   width: 180px;
   padding: 20px;
-  background-color: #a0947f;
+  background-color: #966c46;
   bottom: -40px;
   right: 500px;
 }
@@ -294,7 +295,7 @@ nav {
   height: 70px;
   width: 1px;
   background-color: #ffffff;
-  top: 140px;
+  top: 152px;
   right: 130px;
 }
 
@@ -305,7 +306,7 @@ nav {
   border-radius: 10px;
   background-color: #ffffff;
   position: absolute;
-  top: 200px;
+  top: 210px;
   right: 123px;
 }
 
@@ -317,6 +318,7 @@ nav {
   bottom: 70px;
   right: -80px;
 }
+
 .card2 .circle-two {
   position: absolute;
   height: 5px;
@@ -324,14 +326,14 @@ nav {
   padding: 5px;
   border-radius: 10px;
   background-color: #ffffff;
-  bottom: 65px;
+  bottom: 63px;
   right: -95px;
 }
 
 .animated {
   opacity: 0;
   transform: translateY(100px);
-  transition: all 0.8s ease-in-out;
+  transition: all 2s ease-in-out;
 }
 
 .animated.show {
@@ -366,12 +368,69 @@ nav {
   width: calc(50% - 30px); 
   max-width: 400px; 
   margin: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes expandCard {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%); 
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%); 
+    opacity: 1;
+  }
+}
+
+@keyframes collapseCard {
+  0% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.service-card.expanded {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  width: 80%; 
+  height: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: expandCard 0.8s ease-in-out forwards;
+  opacity: 1;
+}
+
+.service-card.collapsing {
+  animation: collapseCard 0.8s ease-in-out forwards;
+  opacity: 1;
+}
+
+.service-card.expanded p {
+  font-size: 16px;
+  margin-bottom: 40px; 
+}
+
+.service-card.expanded h3 {
+  font-size: 24px;
 }
 
 .service-card:hover {
   background: linear-gradient(45deg, #966c46, #ddd3c2);
-  transform: translateY(-10px) scale(1.5);
+  transform: translateY(-10px);
   box-shadow: 0 4px 10px rgba(220, 211, 194, 0.6);
 }
 
@@ -419,6 +478,13 @@ nav {
   background-color: #966c46;
 }
 
+.service-card.expanded ~ .service-card::before,
+.service-card.expanded ~ .service-card::after,
+.service-card.expanded::before,
+.service-card.expanded::after {
+  display: none;
+}
+
 .service-card .icon i {
   font-size: 48px; 
   margin-bottom: 20px;
@@ -438,6 +504,7 @@ nav {
 
 .Logo_Services img {
   width: 50px; 
+  border-radius: 50%;
   transition: transform 0.3s ease;
 }
 
@@ -470,6 +537,52 @@ nav {
 .service-card a:hover {
   color: #a06b51;
 }
+
+.read-more {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.read-more:hover {
+  color: #a06b51;
+  transform: scale(1.1);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.read-more:focus {
+  color: #a06b51;
+  outline: none;
+  transform: scale(1.1);
+}
+
+x
+.service-card .read-more {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.service-card .read-more::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #a06b51;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card .read-more:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 
 .stylish-living {
   padding: 60px 20px;
