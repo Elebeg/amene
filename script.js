@@ -59,13 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const navbar = document.querySelector('.navbar');
         const backgroundContainer = document.querySelector('.background-container');
       
-        // Quando o usuário rola para baixo
         if (window.scrollY > 0) {
-          navbar.classList.add('scrolled');  // Adiciona o fundo escuro à navbar
-          backgroundContainer.classList.add('visible');  // Torna o fundo visível
+          navbar.classList.add('scrolled');  
+          backgroundContainer.classList.add('visible');  
         } else {
-          navbar.classList.remove('scrolled');  // Remove o fundo escuro da navbar
-          backgroundContainer.classList.remove('visible');  // Torna o fundo invisível
+          navbar.classList.remove('scrolled');  
+          backgroundContainer.classList.remove('visible');  
         }
       });      
 });

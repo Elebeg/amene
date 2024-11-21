@@ -127,7 +127,6 @@ nav {
   justify-content: center;
   padding: 25px 25px;
   gap: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
 }
 
 .socialContainer {
@@ -224,7 +223,18 @@ nav {
   color: #ffffff;
   border-radius: 30px;
   font-size: 20px;
+  font-weight: bold;
   border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.left-section button:hover {
+  background: linear-gradient(45deg, #ddd3c2, #966c46); 
+  color: #ffffff; 
+  border: 2px solid #ffffff; 
+  transform: scale(1.1); 
+  box-shadow: 0 8px 12px rgba(220, 211, 194, 0.6);
 }
 
 .card-img {
@@ -235,10 +245,22 @@ nav {
   border-radius: 25px;
   height: 40px;
   width: 80px;
+  box-shadow: 0 4px 10px rgba(220, 211, 194, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-img img {
   height: 80px;
+  transition: transform 0.3s ease;
+}
+
+.card-img:hover {
+  transform: translateY(-10px) scale(1.1); 
+  box-shadow: 0 8px 16px rgba(220, 211, 194, 0.6);
+}
+
+.card-img:hover img {
+  transform: scale(1.2); 
 }
 
 .card1 {
@@ -246,7 +268,7 @@ nav {
   width: 230px;
   padding: 20px;
   background-color: #a0947f;
-  right: 310px;
+  right: 100px;
   top: 100px;
 }
 
@@ -260,7 +282,7 @@ nav {
   padding: 20px;
   background-color: #a0947f;
   bottom: -40px;
-  right: 620px;
+  right: 500px;
 }
 
 .card2 p {
@@ -324,53 +346,117 @@ nav {
 }
 
 .cards-container {
-  display: flex;             
-  flex-wrap: wrap;              
-  justify-content: center;    
-  align-items: center;        
-  height: 100vh;   
-  padding: 0 20px;                       
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 30px; 
+  padding: 20px;
+  margin-top: 130px;
+  margin-bottom: 90px;
 }
 
 .service-card {
   background: linear-gradient(45deg, #ddd3c2, #966c46); 
   border: 2px solid #966c46;
   border-radius: 8px;
-  box-shadow: 0 4px 6px #966c46;
+  box-shadow: 0 4px 10px rgba(220, 211, 194, 0.6);
   padding: 40px;
+  position: relative;
   text-align: center;
-  flex: 1;
-  max-width: 300px;
-  margin: 50px;    
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transition: background 0.3s ease-in, transform 0.5s ease-out;
-}
-
-.service-card:hover{
-  background: linear-gradient(45deg, #966c46, #ddd3c2);
+  width: calc(50% - 30px); 
+  max-width: 400px; 
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #966c46, #ddd3c2);
+  transform: translateY(-10px) scale(1.5);
+  box-shadow: 0 4px 10px rgba(220, 211, 194, 0.6);
+}
+
+.service-card:nth-child(1)::before,
+.service-card:nth-child(2):after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #966c46; 
+}
+
+.service-card:nth-child(3):before,
+.service-card:nth-child(4):before  {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #966c46;
+}
+
+.service-card:nth-child(1):after,
+.service-card:nth-child(3):after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -40px;
+  height: 100%;
+  width: 2px;
+  background-color: #966c46;
+}
+
+.service-card:nth-child(2):before,
+.service-card:nth-child(4)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40px;
+  height: 100%;
+  width: 2px;
+  background-color: #966c46;
 }
 
 .service-card .icon i {
   font-size: 48px; 
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.Logo_Services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 40px;
+  top: 53%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 10; 
+}
+
+.Logo_Services img {
+  width: 50px; 
+  transition: transform 0.3s ease;
+}
+
+.Logo_Services img:hover {
+  transform: scale(1.2);
 }
 
 .service-card h3 {
   font-size: 20px;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-weight: 700;
 }
 
 .service-card p {
   font-size: 14px;
   color: whitesmoke;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 .service-card a {
@@ -433,6 +519,11 @@ nav {
   object-fit: cover; 
   border-bottom-left-radius: 200px; 
   border-top-right-radius: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
 }
 
 .highlight {
@@ -466,4 +557,66 @@ nav {
 
 ::-webkit-scrollbar-vertical {
   width: 12px;
+}
+
+.about-us {
+  padding: 100px 20px;
+  background-color: #fcf5ee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-content {
+  flex: 1 1 50%;
+  color: #4d4d4d;
+}
+
+.text-content h1 {
+  font-size: 2.5rem;
+  color: #966c46; 
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.text-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.text-content .highlight {
+  color: #966c46;
+  font-weight: bold;
+}
+
+.image-content {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(220, 211, 194, 0.6);
+  border-bottom-right-radius: 300px; 
+  border-top-left-radius: 200px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-content img:hover {
+  transform: scale(1.05);
 }

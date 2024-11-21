@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design de Interiores</title>
+    <title>Studio Amene</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./assets/Logo_arredondada.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cb9a997e82.js" crossorigin="anonymous"></script>
@@ -14,15 +15,17 @@
 <body>
     <div class="navbar">
         <div class="logo">
+            <a class="smooth-scroll" href="#Welcome-section">
           <img src="assets/Logo.webp" alt="Logo">
+          </a>
         </div>
         <nav>
           <ul class="item-list">
-            <li><a class="item smooth-scroll" href="#Services-section">Sobre Nós</a></li>
-            <li><a class="item smooth-scroll" href="#Beneficios">Benefícios</a></li>
+            <li><a class="item smooth-scroll" href="#services-section">Serviços</a></li>
+            <li><a class="item smooth-scroll" href="#Benefics-section">Benefícios</a></li>
+            <li><a class="item smooth-scroll" href="#about-section">Sobre Nós</a></li>
             <li><a class="item smooth-scroll" href="#Projetos">Projetos</a></li>
             <li><a class="item smooth-scroll" href="#Etapas">Etapas</a></li>
-            <li><a class="item smooth-scroll" href="#Servicos">Serviços</a></li>
           </ul>
         </nav>
         <div class="contact card">
@@ -40,12 +43,12 @@
      <div class="container background-container" data-aos="fade-up">
         <div class="line"></div>
        <div class="main-section">
-        <div class="left-section">
+        <div class="left-section" data-aos="fade-right">
             <div>
                 <h1>Design de Interiores<br/>Com Atenção aos Detalhes</h1>
             </div>
             <div class="buttom">
-                <button>SAIBA MAIS</button>
+                <button class="smooth-scroll" href="#Benefics-section">SAIBA MAIS</button>
             </div>
         </div>
         <div class="right-section">
@@ -73,41 +76,53 @@
      </div>
     </section>
 
-     <section id="Services-section" class="services" data-aos="fade-up">
+    <section id="services-section" class="services" data-aos="fade-up">
         <div class="cards-container">
-            <div class="service-card">
-                <div class="icon">
-                    <i class="fa-solid fa-compass-drafting" style="color: #966c46;"></i>
-                </div>
-                <h3>Planejamento Personalizado</h3>
-                <p>Compreendemos que a arquitetura vai além de uma simples construção. Nosso planejamento começa com a essência do cliente, criando espaços que não apenas atendem às necessidades, mas que conectam e transformam a maneira de viver, trabalhar e interagir com os ambientes.</p>
-                <a href="#">Leia mais →</a>
+          <div class="service-card card-s1" data-aos="fade-right">
+            <div class="icon">
+              <i class="fa-solid fa-compass-drafting" style="color: #966c46;"></i>
             </div>
-        
-            <div class="service-card">
-                <div class="icon">
-                    <i class="fas fa-couch" style="color:#966c46;"></i>
-                </div>
-                <h3>Seleção Cuidadosa de Materiais</h3>
-                <p>Buscamos não apenas qualidade, mas também o alinhamento perfeito entre estética e funcionalidade. Selecionamos materiais que vão além das expectativas, garantindo que cada elemento do espaço contribua para a construção de um ambiente de excelência.</p>
-                <a href="#">Leia mais →</a>
+            <h3>Projeto Arquitetônico</h3>
+            <p>O projeto arquitetônico é a base conceitual de toda a construção. Todas as decisões giram em torno deste projeto principal, que orienta os projetos complementares e o projeto de interiores.</p>
+            <a href="#">Leia mais →</a>
+          </div>
+      
+          <div class="service-card card-s2" data-aos="fade-left">
+            <div class="icon">
+              <i class="fa-solid fa-ruler-combined" style="color: #966c46;"></i>
             </div>
-        
-            <div class="service-card">
-                <div class="icon">
-                    <i class="fa-solid fa-hammer" style="color: #966c46;"></i>
-                </div>
-                <h3>Execução de Alta Qualidade</h3>
-                <p>Nosso compromisso com a excelência se reflete em cada etapa da execução. Desde a concepção até a entrega final, garantimos a máxima atenção aos detalhes, com uma execução técnica impecável que transforma a visão em realidade.</p>
-                <a href="#">Leia mais →</a>
+            <h3>Acompanhamento de Obra</h3>
+            <p>Oferecemos auxílio essencial para a execução do projeto. Este acompanhamento é voltado para sanar dúvidas e garantir a fidelidade ao projeto durante a construção.</p>
+            <a href="#">Leia mais →</a>
+          </div>
+      
+          <div class="service-card card-s3" data-aos="fade-right">
+            <div class="icon">
+              <i class="fa-solid fa-couch" style="color: #966c46;"></i>
             </div>
-        </div>        
-    </section>
+            <h3>Projeto de Interiores</h3>
+            <p>Visualize sua nova casa com imagens realistas e detalhadas. Esta etapa ajuda a entender as propostas de cada ambiente, com atenção às funcionalidades e ao design.</p>
+            <a href="#">Leia mais →</a>
+          </div>
+      
+          <div class="service-card card-s4" data-aos="fade-left">
+            <div class="icon">
+              <i class="fa-solid fa-hammer" style="color: #966c46;"></i>
+            </div>
+            <h3>Gerenciamento de Obra</h3>
+            <p>Desde orçamentos iniciais até a entrega final, cuidamos de cada detalhe. Monitoramos presencialmente o andamento, assegurando excelência em cada etapa do processo.</p>
+            <a href="#">Leia mais →</a>
+          </div>
+        </div>
+        <div class="Logo_Services">
+            <img src="assets/Logo.webp" alt="Logo">
+          </div>
+      </section>      
 
-    <section class="stylish-living" data-aos="fade-up">
+    <section id="Benefics-section" class="stylish-living" data-aos="fade-up">
         <div class="content-wrapper">
-            <div class="text-container">
-                <h1>Criamos a Arte de Viver com Estilo de Forma Estilosa</h1>
+            <div class="text-container" data-aos="fade-right">
+                <h1>Unidos Pela Crença de que a arquitetura vai além de estruturas físicas</h1>
                 <p>
                     Em nossas criações, buscamos mais do que simples respostas.
                     <span class="highlight">procuramos conexões emocionais que se manifestem nos espaços idealizados.</span> 
@@ -128,11 +143,37 @@
                     mas das pessoas que os tornam vivos.
                 </p>
             </div>
-            <div class="image-container">
+            <div class="image-container" data-aos="fade-left">
                 <img src="assets/Art_Image.png" alt="Stylish Living" />
             </div>
         </div>
     </section>
+
+    <section id="about-section" class="about-us" data-aos="fade-up">
+        <div class="about-container">
+          <div class="image-content" data-aos="fade-right">
+            <img src="assets/About_us.png" alt="Sobre a Empresa">
+          </div>
+          <div class="text-content" data-aos="fade-left">
+            <h1>A Empresa</h1>
+            <p>
+              Acreditamos que cada desafio é uma porta aberta para a inovação; 
+              <span class="highlight">nós buscamos não apenas atender, mas exceder as expectativas.</span> 
+              A excelência é nossa bússola.
+            </p>
+            <p>
+              <span class="highlight">é a arte de criar ambientes que influenciam vidas.</span> 
+              A paixão por este trabalho vai além de criar ambientes visualmente deslumbrantes.
+            </p>
+            <p>
+              <span class="highlight">Nós moldamos experiências.</span>
+              Cada detalhe é cuidadosamente considerado, 
+              desde a concepção até a materialização, refletindo nosso compromisso em transformar 
+              a maneira como as pessoas vivem, trabalham e interagem com o espaço ao seu redor.
+            </p>
+          </div>
+        </div>
+      </section>         
 
      <script src="script.js"></script>
 </body>
