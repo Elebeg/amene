@@ -966,6 +966,7 @@ button.next {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-color: #333;
 }
 
 .project-title {
