@@ -214,40 +214,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
     
-    window.addEventListener('load', function() {
-        const wordsMatheus = document.querySelectorAll('.matheus .word');
-        wordsMatheus.forEach((word, index) => {
+      const animateWords = (section) => {
+        const words = section.querySelectorAll(".word");
+        words.forEach((word, index) => {
           setTimeout(() => {
-            word.classList.add('visible');
+            word.classList.add("visible");
           }, index * 300); 
         });
-      
-        const wordsMariaEduarda = document.querySelectorAll('.maria-eduarda .word');
-        wordsMariaEduarda.forEach((word, index) => {
-          setTimeout(() => {
-            word.classList.add('visible');
-          }, index * 300); 
+      };
+
+      const resetWords = (section) => {
+        const words = section.querySelectorAll(".word");
+        words.forEach((word) => {
+          word.classList.remove("visible");
         });
-      });
-
-      const sections = document.querySelectorAll('.content-wrapper');
-
-    const handleIntersection = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-        const words = entry.target.querySelectorAll('.word');
-        words.forEach(word => word.classList.add('visible'));
-        } else {
-        const words = entry.target.querySelectorAll('.word');
-        words.forEach(word => word.classList.remove('visible'));
-        }
-    });
-    };
-
-      const observer = new IntersectionObserver(handleIntersection, {
+      };
+    
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateWords(entry.target); 
+          } else {
+            resetWords(entry.target); 
+          }
+        });
+      }, {
         threshold: 0.5, 
       });
-      
-      sections.forEach(section => observer.observe(section));
-      
+    
+      const sections = document.querySelectorAll(".content-wrapper");
+      sections.forEach((section) => observer.observe(section));
 });
