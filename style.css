@@ -972,8 +972,8 @@ button.next {
 
 .blush-more-bottom {
   position: absolute; 
-  margin-top: 1200px;
-  margin-left: 700px;
+  margin-top: 1100px;
+  margin-left: 400px;
   width: 1000px; 
   height: 1000px;
   background: radial-gradient(circle, rgba(150, 108, 70, 0.8) 0%, rgba(150, 108, 70, 0.5) 50%, rgba(150, 108, 70, 0.2) 100%);
