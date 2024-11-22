@@ -128,4 +128,126 @@ document.addEventListener("DOMContentLoaded", () => {
             e.stopPropagation(); 
         });
     });
+
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const modal360 = document.getElementById('modal360');
+    const closeModal = document.querySelector('.close');
+    const sky360 = document.getElementById('sky-360');
+    let currentIndex = 0;
+    let autoSlideInterval;
+    
+    function loadImage(slide) {
+        const mainImage = slide.querySelector('img[data-src]'); 
+        const dataSrc = mainImage ? mainImage.getAttribute('data-src') : null;
+        if (dataSrc && !mainImage.src) {
+            mainImage.src = dataSrc; 
+        }
+    }
+    
+    function showSlide(index) {
+        const totalSlides = slides.length;
+    
+        if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
+    
+        const offset = -currentIndex * 100;
+        slider.style.transform = `translateX(${offset}%)`;
+    
+        slides.forEach((slide, i) => {
+            const textLeft = slide.querySelector('.text-left');
+            const textRight = slide.querySelector('.text-right');
+    
+            if (i === currentIndex) {
+                textLeft.style.opacity = '1'; 
+                textRight.style.opacity = '1';
+                loadImage(slide);
+            } else {
+                textLeft.style.opacity = '0'; 
+                textRight.style.opacity = '0';
+            }
+        });
+    }
+    
+    prevButton.addEventListener('click', () => {
+        showSlide(currentIndex - 1);
+        resetAutoSlide();
+    });
+    
+    nextButton.addEventListener('click', () => {
+        showSlide(currentIndex + 1);
+        resetAutoSlide();
+    });
+    
+    function autoSlide() {
+        autoSlideInterval = setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, 3000);
+    }
+    
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlide();
+    }
+    
+    autoSlide();
+    showSlide(0);    
+
+    document.addEventListener('scroll', () => {
+        const title = document.querySelector('.project-title');
+        const scrollY = window.scrollY; 
+        const triggerHeight = document.querySelector('.parallax-360').offsetTop; 
+        const sectionHeight = document.querySelector('.parallax-360').offsetHeight;
+    
+        if (scrollY > triggerHeight - window.innerHeight && scrollY < triggerHeight + sectionHeight) {
+            const scale = 1 + (scrollY - triggerHeight + window.innerHeight) / 500; 
+            title.style.transform = `scale(${scale})`;
+        } else {
+            title.style.transform = 'scale(1)';
+        }
+    });
+    
+    window.addEventListener('load', function() {
+        const wordsMatheus = document.querySelectorAll('.matheus .word');
+        wordsMatheus.forEach((word, index) => {
+          setTimeout(() => {
+            word.classList.add('visible');
+          }, index * 300); 
+        });
+      
+        const wordsMariaEduarda = document.querySelectorAll('.maria-eduarda .word');
+        wordsMariaEduarda.forEach((word, index) => {
+          setTimeout(() => {
+            word.classList.add('visible');
+          }, index * 300); 
+        });
+      });
+
+      const sections = document.querySelectorAll('.content-wrapper');
+
+    const handleIntersection = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        const words = entry.target.querySelectorAll('.word');
+        words.forEach(word => word.classList.add('visible'));
+        } else {
+        const words = entry.target.querySelectorAll('.word');
+        words.forEach(word => word.classList.remove('visible'));
+        }
+    });
+    };
+
+      const observer = new IntersectionObserver(handleIntersection, {
+        threshold: 0.5, 
+      });
+      
+      sections.forEach(section => observer.observe(section));
+      
 });

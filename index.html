@@ -9,6 +9,8 @@
     <link rel="icon" href="./assets/Logo_arredondada.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://kit.fontawesome.com/cb9a997e82.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
@@ -24,8 +26,8 @@
             <li><a class="item smooth-scroll" href="#services-section">Serviços</a></li>
             <li><a class="item smooth-scroll" href="#Benefics-section">Benefícios</a></li>
             <li><a class="item smooth-scroll" href="#about-section">Sobre Nós</a></li>
-            <li><a class="item smooth-scroll" href="#Projetos">Projetos</a></li>
-            <li><a class="item smooth-scroll" href="#Etapas">Etapas</a></li>
+            <li><a class="item smooth-scroll" href="#projects">Projetos</a></li>
+            <li><a class="item smooth-scroll" href="#founders-section">Fundadores</a></li>
           </ul>
         </nav>
         <div class="contact card">
@@ -53,16 +55,16 @@
         </div>
         <div class="right-section">
             <div class="cards">
-                <div class="card1 animated">
+                <div class="card1">
                     <div class="card-img">
                         <img src="assets/2.png" alt="">
                     </div>
-                    <p>Criamos seu espaço de forma<br/>melhor com base na sua ideia</p>
+                    <p>Criamos seu espaço de forma<br>melhor com base na sua ideia</p>
                     <div class="line-one"></div>
                     <div class="circle-one"></div>
                 </div>
                 
-                <div class="card2 animated">
+                <div class="card2">
                     <div class="card-img">
                         <img src="assets/1.png" alt="">
                     </div>
@@ -127,6 +129,7 @@
           </div>
         </div>
         <div class="Logo_Services">
+          <div class="blush-rigth"></div>
             <img src="assets/Logo.webp" alt="Logo">
           </div>
       </section>      
@@ -134,6 +137,7 @@
     <section id="Benefics-section" class="stylish-living" data-aos="fade-up">
         <div class="content-wrapper">
             <div class="text-container" data-aos="fade-right">
+              <div class="blush"></div>
                 <h1>Unidos Pela Crença de que a arquitetura vai além de estruturas físicas</h1>
                 <p>
                     Em nossas criações, buscamos mais do que simples respostas.
@@ -167,6 +171,7 @@
             <img src="assets/About_us.png" alt="Sobre a Empresa">
           </div>
           <div class="text-content" data-aos="fade-left">
+            <div class="blush-rigth"></div>
             <h1>A Empresa</h1>
             <p>
               Acreditamos que cada desafio é uma porta aberta para a inovação; 
@@ -185,7 +190,226 @@
             </p>
           </div>
         </div>
-      </section>         
+      </section>       
+      
+      <section id="projects" class="projects-section">
+        <div class="projects-container">
+            <div class="text-content" data-aos="fade-right">
+              <div class="blush"></div>
+                <h2>Projetos Recentes</h2>
+                <p>
+                  Explore nossos projetos e veja como transformamos ideias em espaços incríveis. 
+                  <br><br>Buscamos explorar novas perspectivas com soluções que não apenas superem as expectativas, mas que também inspirem a excelência em cada projeto.  
+                  <span class="highlight">Moldamos ambientes únicos.</span>
+                  Materializamos espaços verdadeiramente extraordinários.  
+                  Neles refletimos não apenas a nossa habilidade técnica, mas também a paixão por transformar sonhos em ideias, e ideias em realidade.  
+                  <span class="highlight"><br><br>UMA CASA BONITA É UMA CASA FUNCIONAL!</span>  
+                  <br><br>Enfrentar desafios é parte intrínseca do nosso trabalho e vemos cada um deles como uma oportunidade de crescimento e transformação.
+              </p>
+            </div>
+
+            <div class="slider-container" data-aos="fade-left">
+              <div class="slider">
+                  <div class="slide" data-360="/assets/photo_360.jpg">
+                      <div class="text-left">
+                          <h3>Projeto Moderno</h3>
+                          <img src="/assets/fundo_slide.png" alt="Projeto 1 Imagem Pequena">
+                      </div>
+                      <img data-src="/assets/Slide_1.png" alt="Projeto 1">
+                      <div class="text-right">
+                          <p>Este projeto combina design contemporâneo com funcionalidade, criando um espaço elegante e prático.</p>
+                      </div>
+                  </div>
+                  <div class="slide" data-360="/assets/photo_360.jpg">
+                      <div class="text-left">
+                          <h3>Projeto Moderno</h3>
+                          <img src="/assets/fundo_slide.png" alt="Projeto 1 Imagem Pequena">
+                      </div>
+                      <img data-src="/assets/Slide_2.png" alt="Projeto 2">
+                      <div class="text-right">
+                          <p>Uma residência que reflete sofisticação, com espaços cuidadosamente projetados para o conforto.</p>
+                      </div>
+                  </div>
+                  <div class="slide" data-360="/assets/photo_360.jpg">
+                      <div class="text-left">
+                          <h3>Espaço Sustentável</h3>
+                          <img src="/assets/fundo_slide.png" alt="Projeto 1 Imagem Pequena">
+                      </div>
+                      <img data-src="/assets/Slide_3.png" alt="Projeto 3">
+                      <div class="text-right">
+                          <p>Projeto sustentável que prioriza materiais ecológicos e eficiência energética.</p>
+                      </div>
+                  </div>
+                  <div class="slide" data-360="/assets/photo_360.jpg">
+                      <div class="text-left">
+                          <h3>Espaço Sustentável</h3>
+                          <img src="/assets/fundo_slide.png" alt="Projeto 1 Imagem Pequena">
+                      </div>
+                      <img data-src="/assets/Slide_4.png" alt="Projeto 4">
+                      <div class="text-right">
+                          <p>Um espaço que promove criatividade e bem-estar, ideal para residências ou escritórios.</p>
+                      </div>
+                  </div>
+              </div>
+              <button class="prev" aria-label="Slide anterior">&#10094;</button>
+              <button class="next" aria-label="Próximo slide">&#10095;</button>
+            </div>  
+          
+            <div class="parallax-360" style="position: relative; margin-top: 30px;" data-aos="fade-up">
+              <h2 class="project-title">Projeto 360°</h2>
+              <a-scene embedded>
+                  <a-sky id="sky-360" src="/assets/photo_360.jpg" rotation="0 -90 0"></a-sky>
+              </a-scene>
+          </div>
+
+          <div class="projects-grid">
+            <div class="blush"></div>
+            <div class="project-item" data-aos="fade-right">
+                <img src="/assets/Projeto_zambotto.png" alt="Projeto 1">
+                <div class="project-info">
+                    <h3 style="color: #966c46;">Projeto Zambotto</h3> 
+                    <p>Este projeto combina design contemporâneo com funcionalidade, criando um espaço elegante e prático, ideal para ambientes modernos e confortáveis.</p>
+                </div>
+            </div>
+
+            <div class="project-item" data-aos="fade-left">
+                <img src="/assets/Projeto_pessoaX.png" alt="Projeto 2">
+                <div class="project-info">
+                    <h3 style="color: #966c46;">Projeto pessoa X</h3> 
+                    <p>Este projeto reflete sofisticação e conforto, com um design que mistura o clássico e o moderno de maneira harmoniosa e acolhedora.</p>
+                </div>
+            </div>
+
+            <div class="project-item" data-aos="fade-right">
+                <img src="/assets/Projeto_pessoaY.jpg" alt="Projeto 3">
+                <div class="project-info">
+                    <h3 style="color: #966c46;">Projeto pessoa Y</h3> 
+                    <p>Um espaço planejado com foco em sustentabilidade, utilizando materiais ecológicos e técnicas de construção inovadoras.</p>
+                </div>
+            </div>
+
+            <div class="project-item" data-aos="fade-left">
+                <img src="/assets/Projeto_pessoaZ.jpg" alt="Projeto 4">
+                <div class="project-info">
+                    <h3 style="color: #966c46;">Projeto pessoa Z</h3>
+                    <p>Este projeto visa o bem-estar, com espaços amplos e iluminados, criando uma atmosfera de paz e tranquilidade.</p>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>  
+    
+    
+    <section id="founders-section" class="stylish-living">
+      <div class="text-content-founders" data-aos="fade-right">
+        <div class="blush"></div>
+          <h2>Fundadores</h2>
+          <p>Fundadores da 
+            <span class="highlight">Amene</span>
+          </p>
+          </div>
+      <div class="content-wrapper matheus">
+          <div class="text-container p-word">
+              <h1 data-aos="fade-right">Matheus Peruzzolo</h1>
+              <p>
+                <span class="word">"Transformar</span> 
+                <span class="word">ideias</span> 
+                <span class="word">em</span> 
+                <span class="word">espaços</span> 
+                <span class="word">inovadores,</span> 
+                <span class="word">onde</span> 
+                <span class="word">a</span> 
+                <span class="word">criatividade</span> 
+                <span class="word">encontra</span> 
+                <span class="word">funcionalidade,</span> 
+                <span class="word">e</span> 
+                <span class="word">o</span> 
+                <span class="word">design</span> 
+                <span class="word">se</span> 
+                <span class="word">torna</span> 
+                <span class="word">uma</span> 
+                <span class="word">ferramenta</span> 
+                <span class="word">de</span> 
+                <span class="word">transformação</span> 
+                <span class="word">e</span> 
+                <span class="word">inclusão."</span>
+            </p>
+          </div>
+          <div class="image-container matheus" data-aos="fade-left">
+              <img src="/assets/matheus.jpg" alt="Matheus" />
+          </div>
+      </div>
+  
+      <div class="content-wrapper  maria-eduarda">
+          <div class="text-container p-word">
+              <h1 data-aos="fade-left">Maria Eduarda Scolari</h1>
+              <p>
+                <span class="word">"Com</span> 
+                <span class="word">um</span> 
+                <span class="word">compromisso</span> 
+                <span class="word">com</span> 
+                <span class="word">a</span> 
+                <span class="word">sustentabilidade,</span> 
+                <span class="word">busco</span> 
+                <span class="word">criar</span> 
+                <span class="word">ambientes</span> 
+                <span class="word">que</span> 
+                <span class="word">sejam</span> 
+                <span class="word">não</span> 
+                <span class="word">apenas</span> 
+                <span class="word">funcionais,</span> 
+                <span class="word">mas</span> 
+                <span class="word">também</span> 
+                <span class="word">transformadores</span> 
+                <span class="word">para</span> 
+                <span class="word">quem</span> 
+                <span class="word">os</span> 
+                <span class="word">experiencia.</span> 
+                <span class="word">Criar</span> 
+                <span class="word">soluções</span> 
+                <span class="word">que</span> 
+                <span class="word">conectem</span> 
+                <span class="word">o</span> 
+                <span class="word">humano</span> 
+                <span class="word">ao</span> 
+                <span class="word">ambiente</span> 
+                <span class="word">é</span> 
+                <span class="word">minha</span> 
+                <span class="word">paixão."</span>
+            </p> 
+          </div>
+          <div class="image-container" data-aos="fade-right">
+              <img src="/assets/MariaEduarda.jpg" alt="Maria Eduarda" />
+          </div>
+      </div>
+  
+      <div class="content-wrapper content-highlight" data-aos="fade-up">
+        <div class="text-container">
+            <p>Combinamos <span class="highlight">criatividade</span> e <span class="highlight">eficiência</span> para transformar espaços com paixão e excelência.</p>
+            <h3>Studio Amene</h3>
+            <div class="features">
+                <div class="feature">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <p>Inovação</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-leaf"></i>
+                    <p>Sustentabilidade</p>
+                </div>
+                <div class="feature">
+                  <i class="fa-solid fa-cogs"></i>
+                    <p>Eficiência</p>
+                </div>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/assets/together.jpg" alt="Espaço Criativo" />
+        </div>
+    </div>
+    
+  </section>
+    
 
      <script src="script.js"></script>
 </body>
