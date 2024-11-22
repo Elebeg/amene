@@ -957,6 +957,32 @@ button.next {
   animation: moveBlush 5s ease-in-out infinite;
 }
 
+.blush-bottom {
+  position: absolute; 
+  top: 50%;
+  left: 0%;
+  width: 700px; 
+  height: 700px;
+  background: radial-gradient(circle, rgba(150, 108, 70, 0.8) 0%, rgba(150, 108, 70, 0.5) 50%, rgba(150, 108, 70, 0.2) 100%);
+  z-index: -1; 
+  filter: blur(300px); 
+  pointer-events: none; 
+  animation: moveBlush 5s ease-in-out infinite;
+}
+
+.blush-more-bottom {
+  position: absolute; 
+  margin-top: 1200px;
+  margin-left: 700px;
+  width: 1000px; 
+  height: 1000px;
+  background: radial-gradient(circle, rgba(150, 108, 70, 0.8) 0%, rgba(150, 108, 70, 0.5) 50%, rgba(150, 108, 70, 0.2) 100%);
+  z-index: -1; 
+  filter: blur(200px); 
+  pointer-events: none; 
+  animation: moveBlush 5s ease-in-out infinite;
+}
+
 .parallax-360 {
   width: 100%;
   height: 500px;
@@ -996,7 +1022,7 @@ a-scene {
 }
 
 .project-item {
-  background-color: #fff;
+  background-color: #ddd3c2; 
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -1258,4 +1284,17 @@ body.loaded .word {
 
 .content-highlight .image-container img:hover {
   transform: scale(1.05); 
+}
+
+.Logo_Together {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 80px;
+  top: 47.5%;
+  left: 30%; 
+  transform: translate(-50%, -50%); 
+  z-index: 10; 
+  border-radius: 50%;
 }
