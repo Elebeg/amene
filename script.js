@@ -244,4 +244,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
       const sections = document.querySelectorAll(".content-wrapper");
       sections.forEach((section) => observer.observe(section));
+
+
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+        const navbarLinks = document.getElementById('navbar-links');
+        navbarLinks.classList.toggle('active'); // Toggle the 'active' class to show/hide the menu
+    });
 });
