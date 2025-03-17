@@ -776,7 +776,7 @@ nav {
 
 .view-project:hover {
   background: #fff;
-  color: var(--accent-color);
+  color: black;
 }
 
 .slider-controls {
