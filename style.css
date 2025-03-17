@@ -85,7 +85,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 10;
-  background: rgba(150, 108, 70, 0.5);
+  background: rgba(150, 108, 70, 0.8);
 }
 
 .item-list {
@@ -750,7 +750,11 @@ nav {
 }
 
 .slide-content h3 {
-  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
   margin-bottom: 10px;
 }
 
@@ -889,6 +893,7 @@ nav {
 }
 
 .project-overlay h3 {
+  font-family: 'Playfair Display', serif;
   color: white;
   font-size: 1.3rem;
   margin-bottom: 10px;
@@ -1378,7 +1383,8 @@ body.loaded .word {
 
 .gallery-item.large {
   grid-column: span 2;
-  height: 500px;
+  height: 100%;
+  max-height: 800px;
 }
 
 #next-project {
