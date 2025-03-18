@@ -26,7 +26,7 @@ body {
 }
 
 .Service-section{
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .background-container {
@@ -247,7 +247,6 @@ nav {
   display: flex;
   gap: 30px;
   padding: 20px;
-  margin-bottom: 130px;
   margin-top: 102px;
   background: rgba(150, 108, 70, 0.3);
 }
@@ -258,7 +257,6 @@ nav {
   justify-content: center; 
   gap: 30px; 
   padding: 20px;
-  margin-top: 90px;
   margin-bottom: 90px;
 }
 
@@ -401,7 +399,7 @@ nav {
   align-items: center;
   position: absolute;
   width: 40px;
-  top: 51%;
+  top: 46%;
   left: 50%; 
   transform: translate(-50%, -50%); 
   z-index: 10; 
