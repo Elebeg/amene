@@ -9,8 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const indicators = document.querySelectorAll('.indicator');
   const sections = document.querySelectorAll(".content-wrapper");
   const menuToggle = document.getElementById("menu-toggle");
-  const navbarLinks = document.getElementById("navbar-links");
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navbar = document.getElementById('navbar');
+  const navbarElement = document.querySelector('.navbar');
   const contactIcons = document.getElementById("contact-icons");
+  const contactContainer = document.querySelector('.contact');
 
   AOS.init({
     duration: 800,
@@ -203,21 +206,64 @@ document.addEventListener("DOMContentLoaded", () => {
           contactIcons.classList.toggle("show");
       });
   }
-  
-  document.querySelector('.navbar').addEventListener('click', function() {
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-        navbar.classList.toggle('hidden');
+  mobileMenu.addEventListener('click', function() {
+    navbar.classList.toggle('active');
+    
+    this.classList.toggle('active');
+    
+    if (this.classList.contains('active')) {
+      this.children[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      this.children[1].style.opacity = '0';
+      this.children[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+    } else {
+      this.children[0].style.transform = 'none';
+      this.children[1].style.opacity = '1';
+      this.children[2].style.transform = 'none';
     }
   });
-
-
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-        alert("Formulário enviado com sucesso! Entraremos em contato em breve.");
-        this.reset();
+  
+  document.querySelectorAll('.item').forEach(item => {
+    item.addEventListener('click', function() {
+      navbar.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      
+      mobileMenu.children[0].style.transform = 'none';
+      mobileMenu.children[1].style.opacity = '1';
+      mobileMenu.children[2].style.transform = 'none';
     });
+  });
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      navbarElement.classList.add('scrolled');
+    } else {
+      navbarElement.classList.remove('scrolled');
+    }
+    
+    if (window.innerWidth <= 600) {
+      const bottomPosition = Math.max(20, document.documentElement.scrollHeight - window.scrollY - window.innerHeight - 80);
+      
+      if (bottomPosition <= 20) {
+        contactContainer.style.bottom = '80px';
+      } else {
+        contactContainer.style.bottom = '20px';
+      }
+    }
+  });
+  
+  function checkScreenSize() {
+    if (window.innerWidth > 600) {
+      contactContainer.style.bottom = 'auto';
+      contactContainer.style.position = 'relative';
+    } else {
+      contactContainer.style.position = 'fixed';
+      contactContainer.style.bottom = '20px';
+    }
+  }
+  
+  checkScreenSize();
+  
+  window.addEventListener('resize', checkScreenSize);
 
 });
 
