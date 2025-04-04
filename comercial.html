@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Amene | Projetos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./assets/Logo_arredondada.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://kit.fontawesome.com/cb9a997e82.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD0263X7DL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD0263X7DL');
+</script>
+
+<body>
+
+  <div class="navbar">
+    <div class="logo">
+      <a class="smooth-scroll track-click" href="index.html">
+        <img src="assets/Logo.png" alt="Logo">
+      </a>
+    </div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    
+    <nav id="navbar">
+      <ul class="item-list" id="navbar-links">
+        <li><a class="item track-click" href="index.html">Home</a></li>
+        <li><a class="item track-click" href="about-us.html">Sobre Nós</a></li>
+        <li><a class="item track-click" href="interiores.html">Interiores</a></li>
+        <li><a class="item track-click" href="arquitetonicos.html">Arquitetônico</a></li>
+        <li><a class="item track-click" href="comercial.html">Comercial</a></li>
+        <li><a class="item track-click" href="service.html">Serviços</a></li>
+        <li><a class="item track-click" href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+    
+  </div>
+      
+  <section class="projects-section">
+    <div class="container">
+      <div class="projects-grid">
+        <!-- Comercial IP -->
+        <div class="project-item">
+          <a href="comercialIP.html" class="project-link track-click">
+            <div class="project-image">
+              <img src="./assets/Projeto_IP_recepcao.png" alt="Comercial IP">
+              <div class="project-overlay">
+                <h3>Comercial IP</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Comercial FJ -->
+        <div class="project-item">
+          <a href="comercialFJ.html" class="project-link track-click">
+            <div class="project-image">
+              <img src="./assets/Projeto_FJ.jpg" alt="Comercial FJ">
+              <div class="project-overlay">
+                <h3>Comercial FJ</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+        <div class="footer-left">
+            <p>&copy; 2024 Elepochan. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <img src="./assets/footer_img.jpg" alt="Footer Logo">
+            <ul class="social-links">
+                <li> LinkedIn
+                    <a href="https://www.linkedin.com/in/lucas-schuler-foppa-24723b272/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li> GitHub
+                    <a href="https://github.com/elebeg" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li> Instagram
+                    <a href="https://www.instagram.com/elepochan/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll(".track-click").forEach(item => {
+          item.addEventListener("click", function() {
+              gtag('event', 'click_personalizado', {
+                  'event_category': 'Interacao',
+                  'event_label': this.id || this.className || "Elemento desconhecido"
+              });
+          });
+      });
+  });
+
+  let startTime = Date.now();
+
+  window.addEventListener("beforeunload", function() {
+      let timeSpent = (Date.now() - startTime) / 1000;
+      gtag('event', 'tempo_na_pagina', {
+          'event_category': 'Engajamento',
+          'value': timeSpent
+      });
+  });
+</script>
+
+     <script src="script.js"></script>
+</body>
+</html>

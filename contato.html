@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Amene | Serviços</title>
+    <title>Studio Amene | Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./assets/Logo_arredondada.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,58 +41,69 @@
     </div>
     
     <nav id="navbar">
-      <ul class="item-list" id="navbar-links">
-        <li><a class="item track-click" href="index.html">Home</a></li>
-        <li><a class="item track-click" href="about-us.html">Sobre Nós</a></li>
-        <li><a class="item track-click" href="interiores.html">Interiores</a></li>
-        <li><a class="item track-click" href="arquitetonicos.html">Arquitetônico</a></li>
-        <li><a class="item track-click" href="comercial.html">Comercial</a></li>
-        <li><a class="item track-click" href="service.html">Serviços</a></li>
-        <li><a class="item track-click" href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
+        <ul class="item-list" id="navbar-links">
+          <li><a class="item track-click" href="index.html">Home</a></li>
+          <li><a class="item track-click" href="about-us.html">Sobre Nós</a></li>
+          <li><a class="item track-click" href="interiores.html">Interiores</a></li>
+          <li><a class="item track-click" href="arquitetonicos.html">Arquitetônico</a></li>
+          <li><a class="item track-click" href="comercial.html">Comercial</a></li>
+          <li><a class="item track-click" href="service.html">Serviços</a></li>
+          <li><a class="item track-click" href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
   </div>
 
-      <section id="services-section" class="services" data-aos="fade-up">
-        <div class="cards-container">
-          <div class="service-card card-s1" data-aos="fade-right">
-            <div class="icon">
-              <i class="fa-solid fa-compass-drafting" style="color: #966c46;"></i>
-            </div>
-            <h3>Projeto Arquitetônico</h3>
-            <p>O projeto arquitetônico é a base conceitual de toda a construção. Todas as decisões giram em torno deste projeto principal, que orienta os projetos complementares e o projeto de interiores.</p>
-          </div>
-      
-          <div class="service-card card-s2" data-aos="fade-left">
-            <div class="icon">
-              <i class="fa-solid fa-ruler-combined" style="color: #966c46;"></i>
-            </div>
-            <h3>Acompanhamento de Obra</h3>
-            <p>Oferecemos auxílio essencial para a execução do projeto. Este acompanhamento é voltado para sanar dúvidas e garantir a fidelidade ao projeto durante a construção.</p>
-          </div>
-      
-          <div class="service-card card-s3" data-aos="fade-right">
-            <div class="icon">
-              <i class="fa-solid fa-couch" style="color: #966c46;"></i>
-            </div>
-            <h3>Projeto de Interiores</h3>
-            <p>Visualize sua nova casa com imagens realistas e detalhadas. Esta etapa ajuda a entender as propostas de cada ambiente, com atenção às funcionalidades e ao design.</p>
-          </div>
-      
-          <div class="service-card card-s4" data-aos="fade-left">
-            <div class="icon">
-              <i class="fa-solid fa-hammer" style="color: #966c46;"></i>
-            </div>
-            <h3>Gerenciamento de Obra</h3>
-            <p>Desde orçamentos iniciais até a entrega final, cuidamos de cada detalhe. Monitoramos presencialmente o andamento, assegurando excelência em cada etapa do processo.</p>
-          </div>
+
+  <div class="contact-section">
+    <div class="contact-info">
+        <h1 class="section-title">CONTATO</h1>
+        <p>Rod. José Carlos Daux, 5500. Sala 304, torre Jurerê B. Saco Grande. Florianópolis - SC</p>
+        <p>contato@gabrielbordin.com.br</p>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/amenestudio/" class="social-link">
+                <i class="fab fa-instagram"></i> instagram.com/amenestudio
+            </a>
+            <a href="https://www.facebook.com/amenestudio" class="social-link">
+                <i class="fab fa-facebook"></i> facebook.com/amenestudio
+            </a>
+            <p><i class="fas fa-phone"></i> +55 (47) 92002 1797</p>
         </div>
-        <div class="Logo_Services">
-          <div class="blush-rigth"></div>
-          <div class="blush"></div>
-            <img src="assets/Logo_arredondada.png" alt="Logo">
-          </div>
-      </section>  
+    </div>
+    
+    <div class="contact-form">
+        <form id="contactForm">
+            <div class="form-group">
+                <label>Nome (obrigatório)</label>
+                <div class="form-row">
+                    <div style="flex: 1;">
+                        <input type="text" id="firstName" class="form-control" placeholder="Primeiro Nome" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <input type="text" id="lastName" class="form-control" placeholder="Sobrenome" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>E-mail (obrigatório)</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Assunto (obrigatório)</label>
+                <input type="text" id="subject" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Mensagem (obrigatório)</label>
+                <textarea id="message" class="form-control" rows="5" required></textarea>
+            </div>
+            
+            <button type="button" id="submitButton" class="submit-button">ENVIAR!</button>
+        </form>
+    </div>
+</div>
 
       <footer>
         <div class="footer-content">

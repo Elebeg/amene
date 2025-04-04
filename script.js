@@ -22,8 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mirror: false
 });
 
-  let expandedCard = null;
-
   const onScroll = () => {
       animatedElements.forEach((el) => {
           const rect = el.getBoundingClientRect();
@@ -67,56 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
   }
-
-  function toggleCardExpansion(serviceCard) {
-      const readMoreLink = serviceCard.querySelector('.read-more');
-      const moreText = serviceCard.querySelector('.more-text');
-
-      if (!readMoreLink || !moreText) return;
-
-      if (serviceCard.classList.contains('expanded')) {
-          serviceCard.classList.remove('expanded');
-          serviceCard.classList.add('collapsing');
-          document.querySelectorAll('.service-card').forEach(card => card.style.opacity = '1');
-          moreText.style.display = 'none';
-          readMoreLink.textContent = 'Leia mais →';
-          expandedCard = null;
-
-          setTimeout(() => serviceCard.classList.remove('collapsing'), 800);
-      } else {
-          if (expandedCard) {
-              expandedCard.classList.remove('expanded');
-              expandedCard.querySelector('.more-text').style.display = 'none';
-              expandedCard.querySelector('.read-more').textContent = 'Leia mais →';
-              expandedCard.style.opacity = '1';
-          }
-
-          serviceCard.classList.add('expanded');
-          document.querySelectorAll('.service-card').forEach(card => {
-              if (card !== serviceCard) card.style.opacity = '0.3';
-          });
-          moreText.style.display = 'block';
-          readMoreLink.textContent = 'Leia menos ←';
-          expandedCard = serviceCard;
-      }
-  }
-
-  readMoreLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const serviceCard = link.closest('.service-card');
-          if (serviceCard) toggleCardExpansion(serviceCard);
-      });
-
-      link.addEventListener('click', (e) => e.stopPropagation());
-  });
-
-  document.addEventListener('click', (e) => {
-      if (expandedCard && !expandedCard.contains(e.target) && !e.target.closest('.read-more')) {
-          toggleCardExpansion(expandedCard);
-      }
-  });
-
 
     if (slider && slides.length > 0) {
     let currentSlide = 0;
@@ -264,6 +212,39 @@ document.addEventListener("DOMContentLoaded", () => {
   checkScreenSize();
   
   window.addEventListener('resize', checkScreenSize);
+
+  document.getElementById('submitButton').addEventListener('click', function() {
+    const form = document.getElementById('contactForm');
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+    
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    if (!firstName || !lastName || !email || !subject || !message) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+    }
+    
+    const whatsappMessage = 
+        `*Novo contato do site*\n\n` +
+        `*Nome:* ${firstName} ${lastName}\n` +
+        `*E-mail:* ${email}\n` +
+        `*Assunto:* ${subject}\n\n` +
+        `*Mensagem:*\n${message}`;
+    
+    const whatsappNumber = "5547920021797"; 
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappURL, '_blank');
+    
+    form.reset();
+  });
 
 });
 
