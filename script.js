@@ -198,20 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-  
-  function checkScreenSize() {
-    if (window.innerWidth > 600) {
-      contactContainer.style.bottom = 'auto';
-      contactContainer.style.position = 'relative';
-    } else {
-      contactContainer.style.position = 'fixed';
-      contactContainer.style.bottom = '20px';
-    }
-  }
-  
-  checkScreenSize();
-  
-  window.addEventListener('resize', checkScreenSize);
 
   document.getElementById('submitButton').addEventListener('click', function() {
     const form = document.getElementById('contactForm');
