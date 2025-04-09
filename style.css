@@ -767,6 +767,7 @@ nav {
   transform-origin: left;
 }
 
+
 #founders-section .content-wrapper:nth-child(odd) .image-container {
   order: 1;  
 }
@@ -783,20 +784,39 @@ nav {
   order: 2; 
 }
 
-.matheus{
-  margin-bottom: 40px;
+#founders-section .content-wrapper {
+  display: flex;
+  align-items: justify;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 60px auto; 
 }
 
-.matheus img{
-  margin-left: -100px;
+#founders-section .text-container,
+#founders-section .image-container {
+  flex: 1;
+  width: 50%; 
+  padding: 0 20px; 
 }
 
-.maria-eduarda{
-  margin-bottom: 40px;
+#founders-section .image-container img {
+  width: 100%;
+  height: 500px; 
+  object-fit: cover;
+  margin-left: 0; 
 }
 
-.maria-eduarda img{
-  margin-left: -100px;
+.matheus img,
+.maria-eduarda img {
+  margin-left: 0;
+  margin-bottom: 70px;
+}
+
+#founders-section .text-container p {
+  text-align: justify;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 15px 0;
 }
 
 .text-content-founders h2 {
@@ -1593,6 +1613,21 @@ textarea.form-control {
   .logo-background {
     padding-top: 35%;
   }
+
+  .contact-section {
+    max-width: 900px;
+    padding: 0 15px;
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+  
+  .section-title {
+    font-size: 36px;
+  }
+  
+  .contact-info {
+    padding-right: 30px;
+  }
 }
 
 /* Tablets pequenos e celulares grandes */
@@ -1705,10 +1740,8 @@ textarea.form-control {
   }
   
   .image-container img {
-    height: 400px;
+    height: 800px;
     max-width: 100%;
-    border-bottom-left-radius: 150px;
-    border-top-right-radius: 200px;
   }
   
   .about-us {
@@ -1873,7 +1906,6 @@ textarea.form-control {
   
   .content-highlight {
     flex-direction: column;
-    border-radius: 15px;
   }
   
   .content-highlight .image-container {
@@ -1882,7 +1914,6 @@ textarea.form-control {
   }
   
   .content-highlight .image-container img {
-    border-radius: 15px;
     max-width: 100%;
     height: auto;
     object-fit: contain;
@@ -1976,6 +2007,36 @@ textarea.form-control {
     padding-top: 25%;
     justify-content: flex-end;
   }
+
+  .contact-section {
+    flex-direction: column;
+    max-width: 700px;
+    margin-top: 100px;
+    margin-bottom: 120px;
+  }
+  
+  .contact-info {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+  
+  .contact-form {
+    width: 100%;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    padding: 8px;
+  }
+  
+  textarea.form-control {
+    min-height: 120px;
+  }
 }
 
 /* Celulares médios */
@@ -2060,12 +2121,8 @@ textarea.form-control {
   }
   
   .image-container img {
-    height: 350px;
+    height: 450px;
     max-width: 100%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
   }
   
   .about-us {
@@ -2073,8 +2130,6 @@ textarea.form-control {
   }
   
   .about-container {
-    border-top-left-radius: 100px;
-    border-top-right-radius: 40px;
     padding: 25px;
   }
   
@@ -2085,11 +2140,6 @@ textarea.form-control {
   
   .text-content p {
     font-size: 1.1rem;
-  }
-  
-  .image-content img {
-    border-bottom-right-radius: 150px;
-    border-top-left-radius: 100px;
   }
 
   .projects-section {
@@ -2191,8 +2241,6 @@ textarea.form-control {
   
   .matheus .image-container img,
   .maria-eduarda .image-container img {
-    border-radius: 150px;
-    max-width: 80%;
     margin: 0 auto;
     display: block;
   }
@@ -2283,6 +2331,34 @@ textarea.form-control {
   .logo-background {
     padding-top: 30%;
   }
+
+  .contact-section {
+    margin-top: 70px;
+    margin-bottom: 80px;
+    padding: 0 10px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .contact-info p {
+    font-size: 14px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .social-link {
+    font-size: 14px;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 /* Celulares pequenos */
@@ -2370,10 +2446,7 @@ textarea.form-control {
   }
   
   .image-container img {
-    height: 280px;
     max-width: 100%;
-    border-bottom-left-radius: 80px;
-    border-top-right-radius: 120px;
   }
   
   .about-us {
@@ -2393,11 +2466,6 @@ textarea.form-control {
   .text-content p {
     font-size: 0.95rem;
     line-height: 1.6;
-  }
-  
-  .image-content img {
-    border-bottom-right-radius: 120px;
-    border-top-left-radius: 80px;
   }
 
   .projects-section {
@@ -2562,6 +2630,31 @@ textarea.form-control {
     padding: 8px;
     margin-top: -100px;
   }
+
+  .contact-section {
+    margin-top: 100px;
+    margin-bottom: 60px;
+  }
+  
+  .section-title {
+    font-size: 26px;
+  }
+  
+  .contact-info p {
+    margin: 12px 0;
+  }
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .social-link i {
+    font-size: 18px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
   
 }
 
@@ -2686,11 +2779,6 @@ textarea.form-control {
     font-size: 0.85rem;
     line-height: 1.5;
     margin: 15px 0;
-  }
-  
-  .image-content img {
-    border-bottom-right-radius: 80px;
-    border-top-left-radius: 60px;
   }
   
   ::-webkit-scrollbar {
@@ -2909,6 +2997,35 @@ textarea.form-control {
   
   .logo-background {
     padding-top: 15%;
+  }
+
+  .contact-section {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-info p {
+    font-size: 13px;
+    margin: 10px 0;
+  }
+  
+  .social-link {
+    margin: 10px 0;
+  }
+  
+  .form-control {
+    padding: 7px;
+    font-size: 14px;
+  }
+  
+  .submit-button {
+    font-size: 14px;
+    padding: 8px;
   }
 }
 

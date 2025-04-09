@@ -187,16 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       navbarElement.classList.remove('scrolled');
     }
-    
-    if (window.innerWidth <= 600) {
-      const bottomPosition = Math.max(20, document.documentElement.scrollHeight - window.scrollY - window.innerHeight - 80);
-      
-      if (bottomPosition <= 20) {
-        contactContainer.style.bottom = '80px';
-      } else {
-        contactContainer.style.bottom = '20px';
-      }
-    }
   });
 
   document.getElementById('submitButton').addEventListener('click', function() {
