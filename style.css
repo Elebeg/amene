@@ -813,7 +813,23 @@ nav {
   margin-bottom: 70px;
 }
 
-#founders-section .text-container p {
+.matheus .text-container p {
+  text-align: right;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+.matheus .text-container h1 {
+  text-align: right;
+}
+
+
+.maria-eduarda .text-container h1 {
+  text-align: left;
+}
+
+.maria-eduarda .text-container p {
   text-align: justify;
   font-size: 1.2rem;
   line-height: 1.6;
