@@ -843,7 +843,7 @@ nav {
 
 .word {
   display: inline-block;
-  opacity: 0;
+  opacity: 1;
   transform: translateX(-20px);
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.3s ease-in-out;
 }

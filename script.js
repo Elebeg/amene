@@ -65,53 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
   }
-
-    if (slider && slides.length > 0) {
-    let currentSlide = 0;
-    const slideCount = slides.length;
-    
-    function updateSlider() {
-      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-      
-      indicators.forEach((indicator, index) => {
-        if (index === currentSlide) {
-          indicator.classList.add('active');
-        } else {
-          indicator.classList.remove('active');
-        }
-      });
-    }
-    
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function() {
-        currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-        updateSlider();
-      });
-    }
-    
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function() {
-        currentSlide = (currentSlide + 1) % slideCount;
-        updateSlider();
-      });
-    }
-    
-    if (indicators.length > 0) {
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', function() {
-          currentSlide = index;
-          updateSlider();
-        });
-      });
-    }
-    
-    setInterval(function() {
-      currentSlide = (currentSlide + 1) % slideCount;
-      updateSlider();
-    }, 5000);
-    
-    updateSlider();
-  }
   
   const title = document.querySelector('.title'); 
   const triggerSection = document.querySelector('.trigger-section');
@@ -129,23 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
               title.style.transform = 'scale(1)';
           }
       });
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-          const words = entry.target.querySelectorAll(".word");
-          words.forEach((word, index) => {
-              if (entry.isIntersecting) {
-                  setTimeout(() => word.classList.add("visible"), index * 300);
-              } else {
-                  word.classList.remove("visible");
-              }
-          });
-      });
-  }, { threshold: 0.5 });
-
-  if (sections.length > 0) {
-      sections.forEach(section => observer.observe(section));
   }
 
   if (menuToggle && navbarLinks && contactIcons) {
